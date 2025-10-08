@@ -1,16 +1,55 @@
 .container-input {
   display: flex;
-  gap: 20px;
+  gap: 100px;
   justify-items: center;
+  justify-content: center;
+  margin: 0;
 }
 
 .container-label {
   font-weight: bold; /* Exemplo: Deixa o texto da label em negrito */
   color: #ffffff;
-  margin-bottom: 5px; /* Adiciona um espaço abaixo da label */
+  /*margin-bottom: 5px; /* Adiciona um espaço abaixo da label */
   display: flex; /* Faz a label ocupar a linha inteira */
-  gap: 10px;
+  gap: 5px;
+  flex-direction: column;
 }
-.vitorias {
-  background-color: blueviolet;
+.bgLabel {
+  background-color: rgb(132, 41, 216);
+  border-radius: 5px;
+  padding: 5px 10px;
+}
+
+.container-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 0;
+}
+
+.button span {
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+.button span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+.button:hover span {
+  padding-right: 25px;
+}
+
+.button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+.span-message {
+  font-size: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

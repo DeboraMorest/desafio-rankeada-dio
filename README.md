@@ -1,18 +1,44 @@
-# React + Vite
+# 💖 Desafio Rankeada DIO
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Este projeto é uma solução para o desafio de lógica de rankeamento proposto pela **DIO**.  
+O objetivo é calcular o nível do jogador com base em sua quantidade de vitórias e derrotas.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## ✨ Funcionalidades
 
-## React Compiler
+- 🎯 Recebe o número de vitórias e derrotas do jogador.
+- ⚔️ Calcula automaticamente o saldo de vitórias.
+- 🏆 Determina o nível do jogador conforme o saldo (Ferro, Bronze, Prata, Ouro, Diamante, Lendário ou Imortal).
 
-The React Compiler is enabled on this template. See [this documentation](https://react.dev/learn/react-compiler) for more information.
+---
 
-Note: This will impact Vite dev & build performances.
+## 🧩 Funcionalidades Técnicas
 
-## Expanding the ESLint configuration
+- 🧮 Função dedicada ao cálculo do saldo de vitórias.
+- 🧠 Lógica de classificação do nível do jogador baseada em faixas de desempenho.
+- ✅ Validação dos dados de entrada, convertendo-os para o tipo **Number**.
+- ⚛️ Componente **React** para o formulário com estados controlados.
+- 💬 Renderização condicional para exibir o saldo e o nível do herói.
+- 🎨 Estrutura modular do código, com separação de **CSS** e **interface**.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## 🚀 Tecnologias
+
+- **Node.js**
+- **JavaScript**
+- **React**
+
+---
+
+## 🧭 Como Executar
+
+1. Clone o repositório.
+2. Instale as dependências.
+3. Execute o comando npm run dev para rodar o local
+
+## 🧠 Autora
+
+Débora Moreira /
+Desenvolvido durante o bootcamp **GFT Start #6 - Lógica de Programação** da DIO.

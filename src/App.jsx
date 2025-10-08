@@ -2,43 +2,42 @@ import { useState } from 'react';
 import './App.css';
 
 function App() {
-  function calculaRank(vitorias, derrotas) {
-    return vitorias - derrotas;
-  }
+  const [nivel, setNivel] = useState(undefined);
+  const [vitorias, setVitorias] = useState('');
+  const [derrotas, setDerrotas] = useState('');
+  const [saldoVitorias, setSaldoVitorias] = useState(undefined);
 
-  const saldoVitorias = calculaRank(95, 0);
-
-  function getRank(saldoVitorias) {
-    if (saldoVitorias <= 10) {
+  function getRank(value) {
+    //value é o resultado de vitórias - derrotas
+    if (value <= 10) {
       return 'Ferro';
-    } else if (saldoVitorias >= 11 && saldoVitorias <= 20) {
+    } else if (value >= 11 && value <= 20) {
       return 'Bronze';
-    } else if (saldoVitorias >= 21 && saldoVitorias <= 50) {
+    } else if (value >= 21 && value <= 50) {
       return 'Prata';
-    } else if (saldoVitorias >= 51 && saldoVitorias <= 80) {
+    } else if (value >= 51 && value <= 80) {
       return 'Ouro';
-    } else if (saldoVitorias >= 81 && saldoVitorias <= 90) {
+    } else if (value >= 81 && value <= 90) {
       return 'Diamante';
-    } else if (saldoVitorias >= 91 && saldoVitorias <= 100) {
+    } else if (value >= 91 && value <= 100) {
       return 'Lendário';
-    } else if (saldoVitorias >= 101) {
+    } else if (value >= 101) {
       return 'Imortal';
     }
   }
 
-  const nivel = getRank(saldoVitorias);
-  const [vitorias, setVitorias] = useState('');
-  const [derrotas, setDerrotas] = useState('');
-
   return (
     <>
-      <h1>QUALQUER COISA</h1>
+      <h1>DESCUBRA O NÍVEL DO SEU HERÓI</h1>
       <div>
         <div className="container-input">
           <div className="container-label">
-            <label htmlFor="vitorias" className="vitorias">
-              Vitórias
-            </label>
+            <div>
+              <label htmlFor="vitorias" className="bgLabel">
+                Vitórias
+              </label>
+            </div>
+
             <input
               id="vitorias"
               name="vitorias"
@@ -51,9 +50,12 @@ function App() {
           </div>
 
           <div className="container-label">
-            <label htmlFor="derrotas" className="vitorias">
-              Derrotas
-            </label>
+            <div>
+              <label htmlFor="derrotas" className="bgLabel">
+                Derrotas
+              </label>
+            </div>
+
             <input
               id="derrotas"
               name="derrotas"
@@ -66,13 +68,24 @@ function App() {
           </div>
         </div>
 
-        <div>
-          <button>Buscar Rank</button>
+        <div className="container-button">
+          <button
+            className="button"
+            onClick={() => {
+              setSaldoVitorias(vitorias - derrotas);
+              setNivel(getRank(vitorias - derrotas));
+            }}
+          >
+            <span>Calcular Rank</span>
+          </button>
         </div>
       </div>
       <div>
-        O Herói tem de saldo de {saldoVitorias} está no nível de {nivel}
-        {derrotas}
+        {saldoVitorias && nivel && (
+          <span className="span-message">
+            O Herói tem de saldo de {saldoVitorias} está no nível de {nivel}
+          </span>
+        )}
       </div>
     </>
   );
