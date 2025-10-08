@@ -1,0 +1,16 @@
+.container-input {
+  display: flex;
+  gap: 20px;
+  justify-items: center;
+}
+
+.container-label {
+  font-weight: bold; /* Exemplo: Deixa o texto da label em negrito */
+  color: #ffffff;
+  margin-bottom: 5px; /* Adiciona um espaço abaixo da label */
+  display: flex; /* Faz a label ocupar a linha inteira */
+  gap: 10px;
+}
+.vitorias {
+  background-color: blueviolet;
+}
